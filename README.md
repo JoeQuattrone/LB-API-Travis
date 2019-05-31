@@ -6,9 +6,6 @@ The API for the LyricBunny React app.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-
-What things you need to install the software and how to install them
-
 ```
 Ruby - 2.5.3
 Rails - 5.2.3
@@ -17,15 +14,12 @@ Postgresql - '>= 0.18', '< 2.0'
 ```
 
 ### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
 Install dependencies
 
 ```
 bundle install
 ```
-Run Postgresql with the PG App or start the server manually with: 
+Run Postgresql with the PG App or start the server manually with:
 ```
 pg_ctl -D /usr/local/var/postgres start
 ```
@@ -44,7 +38,7 @@ http://localhost:3001/popular_songs
 If you recieve a response in `JSON` form, your DB is working as it should.
 
 ## Next Step
-Go back to [LB-Client-Travis](https://github.com/JoeQuattrone/LB-Client-Travis) and continue the instructions. 
+Go back to [LB-Client-Travis](https://github.com/JoeQuattrone/LB-Client-Travis) and continue the instructions.
 
 ## Deployment
 
@@ -72,5 +66,5 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
- end 
+ end
  ```
