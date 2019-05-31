@@ -30,13 +30,14 @@ Create Database & Migrate
 ```
 rake db:create && rake db:migrate
 ```
-
-Start the local server
-
+Run Postgresql with the PG App or start the server manually with: 
+```
+pg_ctl -D /usr/local/var/postgres start
+```
+Start the Rails server
 ```
 rails s
 ```
-
 Verify that your API is working by visiting:
 ```
 http://localhost:3001/popular_songs
