@@ -23,12 +23,18 @@ A step by step series of examples that tell you how to get a development env run
 Install dependencies
 
 ```
-Bundle Install
+bundle install
 ```
 
 Create Database & Migrate
 ```
 rake db:create && rake db:migrate 
+```
+
+Start the local server
+
+```
+rails s
 ```
 
 Verify that your API is working by visiting
@@ -38,4 +44,31 @@ http://localhost:3001/popular_songs
 If you recieve a response in `JSON` form, your DB is working as it should.
 
 
-## Running the tests
+## Deployment
+
+To deploy configure `config/initializers/cors.rb` to allow API requests to be made from the LyricBunny-React frontend.
+
+Example:
+```
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins 'http://localhost:3000'
+
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+end
+```
+Change to:
+```
+Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins 'https://yourwebsitename.com'
+
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+  ```
+end
