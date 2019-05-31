@@ -25,14 +25,13 @@ Install dependencies
 ```
 bundle install
 ```
-
-Create Database & Migrate
-```
-rake db:create && rake db:migrate
-```
 Run Postgresql with the PG App or start the server manually with: 
 ```
 pg_ctl -D /usr/local/var/postgres start
+```
+Create Database & Migrate
+```
+rake db:create && rake db:migrate
 ```
 Start the Rails server
 ```
