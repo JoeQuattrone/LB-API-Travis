@@ -1,5 +1,5 @@
 # API - LyricBunny
-The API for the LyricBunny React app. 
+The API for the LyricBunny React app.
 
 ## Getting Started
 
@@ -23,12 +23,12 @@ A step by step series of examples that tell you how to get a development env run
 Install dependencies
 
 ```
-Bundle Install
+bundle install
 ```
 
 Create Database & Migrate
 ```
-rake db:create && rake db:migrate 
+rake db:create && rake db:migrate
 ```
 
 Verify that your API is working by visiting
