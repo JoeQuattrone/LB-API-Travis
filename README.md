@@ -1,4 +1,4 @@
-# API - LyricBunny
+# API - LyricBunny  [![Build Status](https://travis-ci.org/JoeQuattrone/LB-API-Travis.svg?branch=master)](https://travis-ci.org/JoeQuattrone/LB-API-Travis)
 The API for the LyricBunny React app.
 
 ## Getting Started
