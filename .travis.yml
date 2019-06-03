@@ -4,11 +4,10 @@ rvm:
 addons:
   postgresql: 9.6
 before_script:
-# - cp config/database.yml.travis config/database.yml
 - psql -c 'create database lyricbunny_test;' -U postgres
 test:
   adapter: postgresql
   database: travis_ci_test
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
-  # - bundle exec rspec // switch with minitest
+  - bundle exec rake test
