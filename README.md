@@ -38,7 +38,7 @@ http://localhost:3001/popular_songs
 If you recieve a response in `JSON` form, your DB is working as it should.
 
 ## Next Step
-Go back to [LB-Client-Travis](https://github.com/JoeQuattrone/LB-Client-Travis) and continue the instructions.
+Return to [LB-Client-Travis](https://github.com/JoeQuattrone/LB-Client-Travis) and continue the instructions.
 
 ## Deployment
 
