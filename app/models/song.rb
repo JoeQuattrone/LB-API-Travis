@@ -6,7 +6,6 @@ class Song < ApplicationRecord
   end
 
   def self.find_or_create_by_track_id(data)
-    # binding.pry
     Song.find_or_create_by!(track_id: data["track"]["track_id"]) do |s|
       s.artist_name = data["track"]["artist_name"]
       s.track_name = data["track"]["track_name"]
@@ -14,5 +13,7 @@ class Song < ApplicationRecord
       s.likes = 0
     end
   end
+
+
 
 end

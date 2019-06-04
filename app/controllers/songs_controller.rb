@@ -12,16 +12,10 @@ class SongsController < ApplicationController
   end
 
   def update_likes
-    @song = Song.find_by(track_id: params[:song][:track][:track_id])
-    if @song
-      @song.update(likes: @song.likes + 1)
-    else
-      @song = Song.create(track_id: params[:song][:track][:track_id], track_name: params[:song][:track][:track_name], likes: 1, genre: "N/A", artist_name: params[:song][:track][:artist_name] )
-
-      @song.update(genre: params[:song][:track]["primary_genres"]["music_genre_list"].first["music_genre"]["music_genre_name"]) if !params[:song][:track]["primary_genres"]["music_genre_list"].empty?
-    end
+    @song = Song.find_or_create_by_track_id(params[:song])
+    @song.update(likes: @song.likes + 1) if @song      
   end
-  # params[:song][:track]["primary_genres"]["music_genre_list"].first["music_genre"]["music_genre_name"]
+
 
   def update_likes_from_home
     @song = Song.find_by(track_id: params[:song][:track_id])
