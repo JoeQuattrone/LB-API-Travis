@@ -45,7 +45,7 @@ If you receive a response in `JSON` form, your DB is working as it should.
 Return to [LB-Client-Travis](https://github.com/JoeQuattrone/LB-Client-Travis) and continue the instructions.
 
 ## Running the tests
-To run tests make sure you have created the test database and have seeded it outlined in the steps above.
+To run tests make sure you have created the test database and have seeded it, as outlined in the steps above.
 
 Run tests
 ```
