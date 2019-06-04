@@ -5,10 +5,16 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
     @song = songs(:one)
   end
 
-  # test "should get index" do
-  #   get songs_url, as: :json
-  #   assert_response :success
-  # end
+  test "should get index" do
+    get songs_url, as: :json
+    assert_response :success
+  end
+
+  test "should get popular_songs" do
+    get popular_songs_url, as: :json
+
+    assert_response :success
+  end
 
   # test "should create song" do
   #   assert_difference('Song.count') do
