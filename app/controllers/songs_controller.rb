@@ -12,8 +12,9 @@ class SongsController < ApplicationController
   end
 
   def update_likes
+    # binding.pry
     @song = Song.find_or_create_by_track_id(params[:song])
-    @song.update(likes: @song.likes + 1) if @song      
+    @song.update(likes: @song.likes + 1) if @song
   end
 
 

@@ -1,5 +1,5 @@
 require 'test_helper'
-
+require 'pry'
 class SongsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @song = songs(:one)
@@ -14,6 +14,13 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
     get popular_songs_url, as: :json
 
     assert_response :success
+  end
+
+  test 'should update likes of given song' do
+    exisiting_song_data = {"track"=>{"id"=>1, "artist_name"=>"Eminem", "track_id"=>1809819, "track_name"=>"Lose Yourself", "genre"=>"Alternative Rap", "likes"=>29, "created_at"=>"2019-05-07T19:28:38.690Z", "updated_at"=>"2019-06-04T14:44:56.307Z"}}
+
+    post update_likes_url, params: { song: exisiting_song_data}, as: :json
+    assert_response 204
   end
 
   # test "should create song" do
