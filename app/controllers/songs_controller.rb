@@ -3,8 +3,6 @@ require 'faraday'
 require 'faraday_middleware'
 
 class SongsController < ApplicationController
-
-  # GET /songs
   def index
     @songs = Song.all
 
@@ -12,11 +10,9 @@ class SongsController < ApplicationController
   end
 
   def update_likes
-    # binding.pry
     @song = Song.find_or_create_by_track_id(params[:song])
     @song.update(likes: @song.likes + 1) if @song
   end
-
 
   def update_likes_from_home
     @song = Song.find_by(track_id: params[:song][:track_id])
@@ -43,35 +39,7 @@ class SongsController < ApplicationController
     track_list.each {|song| @songs << Song.find_or_create_by_track_id(song)}
     render json: @songs
   end
-  # search db for songs or create new ones. render json @songs
-
-  # GET /songs/1
-  def show
-    render json: @song
-  end
-
-  # POST /songs
-  def create
-    @song = Song.new(song_params)
-
-    if @song.save
-      render json: @song, status: :created, location: @song
-    else
-      render json: @song.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /songs/1
-  def update
-    if @song.update(song_params)
-      render json: @song
-    else
-      render json: @song.errors, status: :unprocessable_entity
-    end
-  end
-
-
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_song
